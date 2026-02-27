@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -106,21 +107,53 @@ fun TutorialPreview() {
             .padding(16.dp)
             .fillMaxSize()
     ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
 
-        Text(
-            text = "Jetpack Compose tutorial",
-            fontSize = 22.sp
-        )
+            Image(
+                painter = painterResource(R.drawable.tutorial),
+                contentDescription = "Jetpack Compose",
+                modifier = Modifier.fillMaxWidth(),
+                contentScale = ContentScale.Crop
+            )
 
-        Spacer(modifier = Modifier.height(16.dp))
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
 
-        Text(
-            text = "Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, nd intuitive Kotlin APIS.",        )
+                Text(
+                    text = "Jetpack Compose tutorial",
+                    fontSize = 22.sp
+                )
 
-        Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
-        Text(
-            text = "In this tutorial, you build a simple Ul component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest Compose is built around Composable functions. These functions let you define your app's UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the Ul's construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name."
-        )
+                Text(
+                    text = "Jetpack Compose is a modern toolkit for building native " +
+                            "Android UI. Compose simplifies and accelerates UI development " +
+                            "on Android with less code, powerful tools, nd intuitive Kotlin APIS.",
+                    textAlign = TextAlign.Justify
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Text(
+                    text = "In this tutorial, you build a simple Ul component " +
+                            "with declarative functions. You call Compose functions" +
+                            " to say what elements you want and the Compose compiler" +
+                            " does the rest Compose is built around Composable functions. " +
+                            "These functions let you define your app's " +
+                            "UI programmatically because they let you describe how " +
+                            "it should look and provide data dependencies, rather than" +
+                            " focus on the process of the Ul's construction, such as" +
+                            " initializing an element and then attaching it to a parent." +
+                            " To create a Composable function, you add the @Composable" +
+                            " annotation to the function name.",
+                    textAlign = TextAlign.Justify
+                )
+            }
+        }
     }
 }
